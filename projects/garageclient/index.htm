@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Cilent</title>
+</head>
+
+<body>
+    <fieldset id="Garages">
+        <h3>Garage</h3>
+
+        <form id="newGarage" class="new">
+            <label for="name">Garage Name: </label>
+            <input type="text" id="name" required />
+            <input type="submit" id="addGarage" value="Add!" />
+        </form>
+        
+        <ol> </ol>
+    </fieldset>
+        
+    <h3>Workers</h3>
+    <form id="newWorker" class="new">
+        <label for="name">Worker Name: </label>
+        <input type="text" id="workerName" required />
+        <input type="submit" id="addWoeker" value="Add!" />
+    </form>
+    <ol id="Workers"></ol>
+
+    <h3>Vehicles</h3>
+    <form id="Vehicles" class="new">
+        <label for="name">Vehicle Model: </label>
+        <input type="text" id="model" required />
+        <input type="submit" id="addVehicle" value="Add!" />
+    </form>
+    <ol id="Vehicles"></ol>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function ()   
+{
+    try 
+    {
+        GetList("Garages");
+        GetList("Workers");
+    }
+    catch (ex) {
+        console.log(ex);
+    }
+
+});
+function GetList(objName)
+{
+    $.ajax({
+        url: "https://localhost:7195/api/" + objName,
+        success : function (data) 
+        {
+            for (const elem of data) {
+                let v = elem[0]
+                $("#Garages ol").append('<li>' + Object.values(elem) + 
+                    "  <button type='button' class= 'edit'>&#9998</button>" +
+                    "  <button type='button' class= 'delete'>&#128465</button>"
+                    + '</li>');
+            }
+        }
+    })
+}
+
+    </script>
+</body>
+
+</html>

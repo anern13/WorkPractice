@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\GarageWebAPI(not minimal).props" />
+</Project>

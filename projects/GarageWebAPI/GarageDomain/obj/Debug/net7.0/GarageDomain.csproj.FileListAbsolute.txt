@@ -1,0 +1,11 @@
+C:\projects\GarageWebAPI\GarageDomain\bin\Debug\net7.0\GarageDomain.deps.json
+C:\projects\GarageWebAPI\GarageDomain\bin\Debug\net7.0\GarageDomain.dll
+C:\projects\GarageWebAPI\GarageDomain\bin\Debug\net7.0\GarageDomain.pdb
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.AssemblyInfoInputs.cache
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.AssemblyInfo.cs
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.csproj.CoreCompileInputs.cache
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.dll
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\refint\GarageDomain.dll
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\GarageDomain.pdb
+C:\projects\GarageWebAPI\GarageDomain\obj\Debug\net7.0\ref\GarageDomain.dll

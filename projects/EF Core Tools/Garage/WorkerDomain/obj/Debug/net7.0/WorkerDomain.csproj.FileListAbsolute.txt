@@ -1,0 +1,14 @@
+C:\projects\Garage\WorkerDomain\bin\Debug\net7.0\WorkerDomain.deps.json
+C:\projects\Garage\WorkerDomain\bin\Debug\net7.0\WorkerDomain.runtimeconfig.json
+C:\projects\Garage\WorkerDomain\bin\Debug\net7.0\WorkerDomain.dll
+C:\projects\Garage\WorkerDomain\bin\Debug\net7.0\WorkerDomain.pdb
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.csproj.AssemblyReference.cache
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.AssemblyInfoInputs.cache
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.AssemblyInfo.cs
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.csproj.CoreCompileInputs.cache
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.dll
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\refint\WorkerDomain.dll
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.pdb
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\WorkerDomain.genruntimeconfig.cache
+C:\projects\Garage\WorkerDomain\obj\Debug\net7.0\ref\WorkerDomain.dll

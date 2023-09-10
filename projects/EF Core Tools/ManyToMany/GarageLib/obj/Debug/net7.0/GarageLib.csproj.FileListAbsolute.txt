@@ -1,0 +1,14 @@
+C:\projects\ManyToMany\GarageLib\bin\Debug\net7.0\GarageLib.deps.json
+C:\projects\ManyToMany\GarageLib\bin\Debug\net7.0\GarageLib.runtimeconfig.json
+C:\projects\ManyToMany\GarageLib\bin\Debug\net7.0\GarageLib.dll
+C:\projects\ManyToMany\GarageLib\bin\Debug\net7.0\GarageLib.pdb
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.csproj.AssemblyReference.cache
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.AssemblyInfoInputs.cache
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.AssemblyInfo.cs
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.csproj.CoreCompileInputs.cache
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.dll
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\refint\GarageLib.dll
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.pdb
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\GarageLib.genruntimeconfig.cache
+C:\projects\ManyToMany\GarageLib\obj\Debug\net7.0\ref\GarageLib.dll

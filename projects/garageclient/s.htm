@@ -1,0 +1,26 @@
+<html>
+    <body>
+    <ol id="container"></ol>
+    
+    </body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        
+        var values = ["dog", "cat", "parrot", "rabbit"];
+    
+       
+        for (const val of values) 
+        {
+            $('#container').append('<li>'+val+ "  <button type='button' class ='edit' id = "+ val +" name = hi >&#9998</button>"+'</li>' );
+            
+        }
+
+        $(".edit").click(function(event){//this is button
+            alert(this.id + " " + this.name);
+        });
+        
+    });
+</script>
