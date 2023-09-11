@@ -65,7 +65,8 @@
             event.preventDefault();
 
             let fieldset = $(this).parent("fieldset");
-            alert($(fieldset).attr("id"));
+            ajax(
+                (fieldset).attr("id"));
         });
 
     }
@@ -93,7 +94,7 @@ function AppendEntry(garageEntity)
 {
    $("#"+ garageEntity.type +" ol").append(
     '<li>'+
-        "<class ='name'>"+ garageEntity.name + "</>" +
+        "<class ='garageEntity'>"+ garageEntity.name + "</>" +
             " ("+ 
             "<class ='id'>" + garageEntity.id +"</>" +
             ")"+
