@@ -23,16 +23,12 @@ namespace GarageWebAPI_not_minimal_.Controllers
 
         // GET: api/Garages
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GarageEntity>>> GetGarages()
+        public ActionResult<IEnumerable<GarageEntity>> GetGarages()
         {
-            if (_context.Garages == null)
-            {
-                return NotFound();
-            }
-            
-            var garages = await _context.Garages.ToListAsync();
+            var garages = _context.Garages.ToList();
+            var items = garages.ConvertAll(GarageEntity.Convert);
 
-            return garages.ConvertAll(GarageEntity.Convert);
+            return items;
         }
 
         // GET: api/Garages/5

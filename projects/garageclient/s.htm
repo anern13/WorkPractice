@@ -14,12 +14,14 @@
        
         for (const val of values) 
         {
-            $('#container').append('<li>'+val+ "  <button type='button' class ='edit' id = "+ val +" name = hi >&#9998</button>"+'</li>' );
+            $('#container').append('<li>'+'<div>'+val+ "  <button type='button' class ='edit d-none' id = "+ val +" name = hi >&#9998</button>"+ '</div>' +'</li>' );
             
         }
 
         $(".edit").click(function(event){//this is button
-            alert(this.id + " " + this.name);
+            
+                this.toggle();
+        
         });
         
     });

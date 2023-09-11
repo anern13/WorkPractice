@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj": {}
+    "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj": {}
   },
   "projects": {
-    "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj": {
+    "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
+        "projectUniqueName": "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
         "projectName": "GarageWebAPI(not minimal)",
-        "projectPath": "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
+        "projectPath": "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
         "packagesPath": "C:\\Users\\anern\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\obj\\",
+        "outputPath": "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

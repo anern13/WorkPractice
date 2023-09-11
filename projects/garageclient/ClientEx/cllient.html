@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ToDo Client</title>
+</head>
+    <div id= "container">
+        <h1>TODO List</h1>
+        <form id="1">
+            <input type="text" required placeholder="New Todo"/>
+            <input type="submit" value="Add!" />
+
+            <ul>
+                <!-- <li><span>~</span> Do Somthing</li> -->
+            </ul>
+        </form>
+        <form id="2">
+        <input type="text" required placeholder="New Todo"/>
+        <input type="submit" value="Add!" />
+
+        <ul>
+            <!-- <li><span>~</span> Do Somthing</li> -->
+        </ul>
+    </form>
+    </div>
+
+
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        // $("span").on("click", function(event)
+        // {
+        //    $(this).parent().remove();
+        //    event.stopPropagation();//prevents DOM bubleup
+        // });
+    
+        // $("li").on("click", function(event)
+        // {
+        //     alert("li clicked");
+        // });
+    
+        $("form").on("submit", function(event)
+        {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            let thisList = $(this).children("ul");
+            let thisText = $(this).children("input").val();
+
+            $(thisList).append("<li><span>~</span> "+ thisText +"</li>");
+
+            
+        });
+        
+        $("ul").on("click", "span", function(event)
+        {
+            $(this).parent().remove();
+            event.stopPropagation();//prevents DOM bubleup
+        });
+
+        $("ul").on("click","li", function(event)
+        {
+            alert("li clicked");
+        });
+    
+    });
+</script>
+</body>
+</html>

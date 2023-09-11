@@ -41,7 +41,7 @@
                         success: function (response) {
                             $("#Workers").append('<li>' + response.workerName + '(' + response.workerId + ')' +
                                 "  <button type='button' class= 'edit'>&#9998</button>" +
-                                "  <button type='button' class= 'delete'>&#128465</button>"
+                                
                                 + '</li>');
                         },
                         error: function (xhr, status, error) {

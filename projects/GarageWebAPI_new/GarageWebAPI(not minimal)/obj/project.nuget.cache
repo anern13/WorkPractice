@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3piC1uDQzmsPj1hHPbMCJWAhRgKjpPHXY9m5KuxWjrym4llM4MPRPBrG+Ws5+/igXLztWDv4Ce9Iph+4JWV9gQ==",
+  "dgSpecHash": "6F/ZCAnHR46DrKOSsjL5ctIiZueQR+Hz5HE2k7mJNF4OpD/bQ9Lx+CuvuCS5BCvznXaYRMPlW3dLTxA9pC07iQ==",
   "success": true,
-  "projectFilePath": "C:\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
+  "projectFilePath": "C:\\Users\\anern\\Documents\\GitHub\\WorkPractice\\projects\\GarageWebAPI_new\\GarageWebAPI(not minimal)\\GarageWebAPI(not minimal).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anern\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\anern\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
