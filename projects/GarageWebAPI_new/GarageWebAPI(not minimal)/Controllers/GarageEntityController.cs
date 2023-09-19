@@ -11,54 +11,87 @@ namespace GarageWebAPI_not_minimal_.Controllers
     [ApiController]
     public class GarageEntityController : ControllerBase
     {
-        private GarageEntityRepository _repo;
+        private readonly IRepository<Garage> garageRepository;
+        private readonly IRepository<Worker> workerRepository;
+        private readonly IRepository<Vehicle> vehicleRepository;
+        public GarageEntityController(
+            IRepository<Garage> garageRepository,
+            IRepository<Worker> workerRepository,
+            IRepository<Vehicle> vehicleRepository
+            )
+        {
+            this.garageRepository = garageRepository;
+            this.workerRepository = workerRepository;
+            this.vehicleRepository = vehicleRepository;
+        }
 
-        //public GarageEntityController(GarageContext context)
-        //{
-        //    List<IRepository> repositories;
-        //}
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<GarageEntity>>> GetEntitys()
+        {
+            var garages = await garageRepository.GetAllAsync();
+            var workers = await workerRepository.GetAllAsync();
+            var vehicles = await vehicleRepository.GetAllAsync();
 
-        //[HttpGet]
-        //public ActionResult<IEnumerable<GarageEntity>> GetEntitys()
-        //{
-        //    var garages = _context.Garages.ToList().ConvertAll(GarageEntity.Convert);
-        //    var vehicles = _context.Vehicles.ToList().ConvertAll(GarageEntity.Convert);
-        //    var workers = _context.Workers.ToList().ConvertAll(GarageEntity.Convert);
+            var ge = garages.ToList().ConvertAll(GarageEntity.Convert);
+            var we = workers.ToList().ConvertAll(GarageEntity.Convert);
+            var ve = vehicles.ToList().ConvertAll(GarageEntity.Convert);
 
-        //    var entitys = garages.Concat(vehicles).Concat(workers);
-        //    return entitys.ToList();
-        //}
+            return Ok(ge.Concat(we).Concat(ve));
+        }
 
-        //[HttpPost]
-        //public ActionResult<GarageEntity> PostEntity(GarageEntity entity)
-        //{
-        //    string item = entity.Type;
+        [HttpPost]
+        public async Task<ActionResult<GarageEntity>> PostEntity(GarageEntity entity)
+        {
+            if (entity.IsGarage())
+            {
+                entity = new GarageEntity(await garageRepository.PostAsync(new Garage(entity)));
+            }
+            else if (entity.IsVehicle())
+            {
+                entity = new GarageEntity(await vehicleRepository.PostAsync(new Vehicle(entity)));
+            }
+            else if (entity.IsWorker())
+            {
+                entity = new GarageEntity(await workerRepository.PostAsync(new Worker(entity)));
+            }
+            else
+                return BadRequest();
+            
+            return Ok(entity);
+        }
+        [HttpPut]
+        public async Task<ActionResult<GarageEntity>> PutEntity(GarageEntity entity)
+        {
+            if (entity.IsGarage())
+            {
+                entity = new GarageEntity(await garageRepository.PutAsync(new Garage(entity), entity.Id));
+               
+            }
+            else if (entity.IsVehicle())
+            {
+                entity = new GarageEntity(await vehicleRepository.PutAsync(new Vehicle(entity), entity.Id));
+                        
+            }
+            else if (entity.IsWorker())
+            {
+                entity = new GarageEntity(await workerRepository.PutAsync(new Worker(entity), entity.Id));
+             
+            }
+            else
+                return BadRequest();
 
-        //    //post to api/item (garage entity)
-
-        //    return; //new res
-        //}
-        //[HttpPut]
-        //public ActionResult<GarageEntity> PutEntity(GarageEntity entity)
-        //{
-        //    string item = entity.Type;
-        //    int id = entity.Id;
-
-        //    //put to api/item/id(garage entity)
-
-        //    return //updated res
-
-        //}
+            return Ok(entity);
+        }
+    }
         //[HttpDelete]
         //public ActionResult<GarageEntity> DeleteEntity(GarageEntity entity)
         //{
         //    string item = entity.Type;
         //    int id = entity.Id;
 
-        //    //delete to api/item/id
+            //    //delete to api/item/id
 
-        //    return //deleted res
+            //    return //deleted res
 
-      //  }
-    }
+            //}
 }

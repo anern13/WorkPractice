@@ -14,6 +14,8 @@ namespace GarageWebAPI_not_minimal_.Repos
             if(g is not null)
                 g.Name = entity.Name;
 
+            await _context.SaveChangesAsync();
+
             return g;    
         }
 

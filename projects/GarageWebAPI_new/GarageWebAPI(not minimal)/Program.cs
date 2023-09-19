@@ -1,4 +1,5 @@
 using GarageWebAPI;
+using GarageWebAPI_not_minimal_.Repos;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -11,7 +12,10 @@ builder.Services.AddDbContext<GarageContext>
     (options =>
     options.UseSqlServer(builder.Configuration
     .GetConnectionString("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = GarageDBNew")));
-// Add services to the container.
+
+builder.Services.AddTransient<IRepository<Garage>, GarageRepository>();
+builder.Services.AddTransient<IRepository<Worker>, WorkerRepository>();
+builder.Services.AddTransient<IRepository<Vehicle>, VehicleRepository>();
 
 builder.Services.AddControllers();
 

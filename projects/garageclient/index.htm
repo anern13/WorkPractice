@@ -38,35 +38,85 @@
         <ol id="Vehicles"></ol>
     </fieldset>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
-    $(document).ready(function ()   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+$(document).ready(function ()   
 {
     try 
     {
         GetList("GarageEntity");
         
-        $("ol").on("click", "button",function(event, garageEntity)//delete button
+        $("ol").on("click", "button",function(event)//delete button
         {
-            let form = $(this).parent();
-            alert(garageEntity.id);
+            let type = $(this).attr('data-type'); //get type obj
+            let id = $(this).attr("data-id");
+            let li = $(this).parents("li");
 
-
+            $.ajax(
+            {
+                url: "https://localhost:7195/api/" + type + "/" + id,
+                type: 'DELETE',
+                success: function (response) {
+                    alert("deleted");
+                    $(li).remove();
+                },
+                error: function (xhr, status, error) {
+                    alert('not deleted');
+                }
+            });
+        });
+        
+        
+        $("ol").on("submit", "form",function(event)//submit edit
+        {
+            event.preventDefault();
+            let fieldset = $(this).parents("fieldset");//get curr fieldset 
+            let type = $(fieldset).attr('id'); //get type obj
+            let li = $(this).parents("li");
+            let id = $(this).attr("data-id");
+            
+            $.ajax(
+            {
+                url: "https://localhost:7195/api/GarageEntity",
+                type: 'PUT',
+                data: JSON.stringify({"type": type, "name": $(this).children("input").val(), "id": id}),
+                dataType: "json",
+                contentType: "application/json",
+                success : function (data)
+                {
+                    $(li).remove();
+                    AppendEntry(data);
+                }
+            });
         });
 
 
-        $("ol").on("click", "input",function(event)
+        $("ol").on("click", "input",function(event)//display input 
         {
+            
             $(this).siblings("form").toggle();
         });
+
 
         $(".new").on("submit", function(event)
         {
             event.preventDefault();
 
-            let fieldset = $(this).parent("fieldset");
-            ajax(
-                (fieldset).attr("id"));
+            let fieldset = $(this).parent("fieldset");//get curr fieldset 
+            let type = $(fieldset).attr('id'); //get type obj
+            let val = $(this).children("input").val();
+           
+            $.ajax({
+                url:"https://localhost:7195/api/GarageEntity",
+                type: 'POST',
+                data: JSON.stringify({"type": type, "name": val}),
+                dataType: "json",
+                contentType: "application/json",
+                success : function (data)
+                {
+                    AppendEntry(data);
+                }
+            });
         });
 
     }
@@ -86,7 +136,6 @@ function GetList(objName)
                 AppendEntry(elem);
             }
         }
-
     })
 }
 
@@ -99,25 +148,18 @@ function AppendEntry(garageEntity)
             "<class ='id'>" + garageEntity.id +"</>" +
             ")"+
             '<input type ="button" class = "showEdit" value="&#9998"/>'+
-            '<form id="Garage" class="edit" hidden>'+
+            '<form id="Garage" class="edit" data-id= '+garageEntity.id+' hidden>'+
                 '<label for="name">'+ garageEntity.type + ' Name: </label>'+
                 '<input type="text" id="name" required />'+
-                '<input type="submit" id="addGarage" value="Edit!" />'+
+                '<input type="submit" id="addGarage" class = edit value="Edit!" />'+
                 '</form>'+
             "<button type='button' class= 'delete' data-type ="+garageEntity.type+
-            " data-id =" +garageEntity.id+"'>&#128465</button>"+    
+            " data-id =" +garageEntity.id+">&#128465</button>"+    
     ' </li>'
     );
 }
 
-//add 
-//rempve 
-//edit
-
-
-//read
-
-    </script>
+</script>
 </body>
 
 </html>
